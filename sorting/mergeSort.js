@@ -6,6 +6,7 @@ function mergeSort(array) {
   const mid = Math.floor(array.length - 1);
   const left = array.slice(0, mid);
   const right = array.slice(mid);
+  return merge(mergeSort(left), mergeSort(right));
 
   function merge(left, right) {
     const merged = [];
@@ -20,7 +21,6 @@ function mergeSort(array) {
       }
     }
   }
-  return merge(mergeSort(left), mergeSort(right));
 }
 
 console.log("merge sorting", array);
